@@ -1,0 +1,26 @@
+
+server:
+  port: 8081
+#应用名称
+spring:
+  application:
+    name: stock-service
+  cloud:
+    nacos:
+      discovery:
+        #nacos注册中心地址，默认端口号：8848
+        server-addr: 192.168.209.129:8848
+        group: DEV_GROUP # 应用分组默认为：DEFAULT_GROUP
+        application:
+          name: demo-center
+
+dubbo:
+  scan:
+    base-packages: com.example.cloud-deom-provider-service.service
+protocol:
+  name: dubbo
+  port: -1
+registry:
+  address: spring-cloud://192.168.209.129
+
+

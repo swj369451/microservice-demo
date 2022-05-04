@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>microservice-demo</artifactId>
+    <artifactId>microservice-demo-provider-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservice-demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>microservice-demo-provider-service</name>
+    <description>microservice-demo-provider-service</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -14,11 +14,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.6.6</spring-boot.version>
     </properties>
-
-    <packaging>pom</packaging>
-    <modules>
-        <module>microservice-demo-provider</module>
-    </modules>
 
     <dependencyManagement>
         <dependencies>
@@ -64,6 +59,7 @@
             </exclusions>
         </dependency>
 
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -85,12 +81,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
-        </dependency>
-
-
     </dependencies>
 
 
@@ -112,7 +102,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.example.microservicedemo.MicroserviceDemoApplication</mainClass>
+                    <mainClass>com.example.microservicedemoproviderservice.MicroserviceDemoProviderServiceApplication
+                    </mainClass>
                 </configuration>
                 <executions>
                     <execution>
