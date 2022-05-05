@@ -3,50 +3,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>microservice-demo</artifactId>
+    <artifactId>microservice-demo-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservice-demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>microservice-demo-consumer</name>
+    <description>microservice-demo-consumer</description>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.6.6</spring-boot.version>
-        <doubbo-api.version>>1.0-SNAPSHOT</doubbo-api.version>
     </properties>
+
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>microservice-demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
     <packaging>pom</packaging>
     <modules>
-        <module>microservice-demo-provider</module>
-        <module>microservice-demo-consumer</module>
+        <module>microservice-demo-consumer-service</module>
+        <module>microservice-demo-consumer-api</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2021.0.1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2021.0.1.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -65,8 +44,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-
     </dependencies>
 
 
@@ -88,7 +65,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.example.microservicedemo.MicroserviceDemoApplication</mainClass>
+                    <mainClass>com.example.microservicedemoconsumer.MicroserviceDemoConsumerApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

@@ -24,4 +24,4 @@ dubbo:
     # ?????????nacos?????
     address: spring-cloud://192.168.209.129
   cloud:
-    subscribed-services:microservice-demo-provider,microservice-demo-provider-service,microservice-demo-provider-consumer
+    subscribed-services:microservice-demo-provider,microservice-demo-consumer
