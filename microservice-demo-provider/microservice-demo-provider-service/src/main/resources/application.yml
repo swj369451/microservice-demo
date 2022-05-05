@@ -1,26 +1,27 @@
-
-server:
-  port: 8081
-#应用名称
 spring:
   application:
-    name: stock-service
+    name: springcloud-alibaba-dubbo-provider
   cloud:
     nacos:
       discovery:
-        #nacos注册中心地址，默认端口号：8848
         server-addr: 192.168.209.129:8848
-        group: DEV_GROUP # 应用分组默认为：DEFAULT_GROUP
-        application:
-          name: demo-center
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+server:
+  port: 9090
 
 dubbo:
   scan:
-    base-packages: com.example.cloud-deom-provider-service.service
-protocol:
-  name: dubbo
-  port: -1
-registry:
-  address: spring-cloud://192.168.209.129
-
-
+    # dubbo ?????
+    base-packages: com.example.microservicedemoproviderservice.service
+  protocol:
+    # ?????dubbo
+    name: dubbo
+    # dubbo ???? ?-1 ????????20880???
+    port: -1
+  registry:
+    # ?????????nacos?????
+    address: spring-cloud://192.168.209.129
+  cloud:
+    subscribed-services:microservice-demo-provider,microservice-demo-provider-service,microservice-demo-provider-consumer
