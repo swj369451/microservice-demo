@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  application:
+    name: springcloud-alibaba-dubbo-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.209.129:8848
+        namespace: public
+dubbo:
+  registry:
+    address: spring-cloud://localhost
+  cloud:
+    subscribed-services:microservice-demo-provider,microservice-demo-consumer

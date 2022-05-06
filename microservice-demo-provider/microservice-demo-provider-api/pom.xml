@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>microservice-demo</artifactId>
+    <artifactId>microservice-demo-provider-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservice-demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>microservice-demo-provider-api</name>
+    <description>microservice-demo-provider-api</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -15,11 +15,7 @@
         <spring-boot.version>2.6.6</spring-boot.version>
     </properties>
 
-    <packaging>pom</packaging>
-    <modules>
-        <module>microservice-demo-provider</module>
-        <module>microservice-demo-consumer</module>
-    </modules>
+
 
     <dependencyManagement>
         <dependencies>
@@ -48,45 +44,6 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!--nacos discovery依赖-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <!--nacos config依赖-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-
-        <!--actuator依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -97,8 +54,20 @@
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-apache-dubbo-adapter</artifactId>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
+
+    </dependencies>
 
 
     <build>
@@ -118,7 +87,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.example.microservicedemo.MicroserviceDemoApplication</mainClass>
+                    <mainClass>com.example.microservicedemoproviderapi.MicroserviceDemoProviderApiApplication
+                    </mainClass>
                 </configuration>
                 <executions>
                     <execution>
