@@ -10,11 +10,16 @@ spring:
     allow-circular-references: true
 server:
   port: 9090
+management:
+  endpoints:
+    web:
+      exposure:
+        include=*:
 
 dubbo:
   scan:
     # dubbo ?????
-    base-packages: com.example.microservicedemoproviderservice.service
+    base-packages: com.example.microservice-demo-provider-service.service
   protocol:
     # ?????dubbo
     name: dubbo
@@ -22,6 +27,6 @@ dubbo:
     port: -1
   registry:
     # ?????????nacos?????
-    address: spring-cloud://192.168.209.129
+    address: spring-cloud://localhost
   cloud:
     subscribed-services:microservice-demo-provider,microservice-demo-consumer

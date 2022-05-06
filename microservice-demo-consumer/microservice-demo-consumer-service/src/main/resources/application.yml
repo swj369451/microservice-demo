@@ -10,8 +10,9 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.209.129:8848
+        namespace: public
 dubbo:
   registry:
-    address: spring-cloud://192.168.209.129
+    address: spring-cloud://localhost
   cloud:
     subscribed-services:microservice-demo-provider,microservice-demo-consumer

@@ -1,7 +1,8 @@
 package com.example.microservicedemoconsumerservice.controller;
 
+import org.apache.dubbo.config.annotation.DubboReference;
 import com.example.microservicedemoproviderapi.HelloService;
-import jdk.nashorn.internal.ir.annotations.Reference;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,10 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version 1.0
  */
 @RestController
-@RequestMapping(("/demo"))
+@RequestMapping("/demo")
 public class HelloController {
 
-    @Reference
+//    用于标记这个服务具体使用了生产的哪个接口实现的
+    @DubboReference
     private HelloService helloService;
 
     @RequestMapping("/hello")
