@@ -3,33 +3,35 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>microservice-demo-provider</artifactId>
+    <artifactId>microservice-demo-provider-api</artifactId>
     <version>1.0</version>
-
-    <modules>
-        <module>microservice-demo-provider-service</module>
-        <module>microservice-demo-provider-api</module>
-    </modules>
-
-    <packaging>pom</packaging>
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>microservice-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <artifactId>microservice-demo-provider</artifactId>
+        <version>1.0</version>
     </parent>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>${dubbo-spring-boot-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
             <plugin>
-<!--
-        打包jar和war包的例子是在Maven的package命令生命周期内构建的。
-        包括所有的scope为provided的依赖。如果某些依赖需要被排除掉，可以使用exclude选项。
-        重新打包之后，默认情况下原始的(没有配置exectuable)构件(artifact)被重命名为.original，
-        并且使用自定义的分级可以保持原始构件。
-        打jar包时如果不配置该插件，打出来的jar包没有清单文件
--->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
