@@ -2,22 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.example</groupId>
-    <artifactId>microservice-demo-consumer</artifactId>
+    <artifactId>microservice-demo-provider-service</artifactId>
     <version>1.0</version>
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>microservice-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <artifactId>microservice-demo-provider</artifactId>
+        <version>1.0</version>
     </parent>
 
-    <packaging>pom</packaging>
 
-    <modules>
-        <module>microservice-demo-consumer-api</module>
-        <module>microservice-demo-consumer-service</module>
-    </modules>
 
     <dependencies>
         <dependency>
@@ -36,8 +32,32 @@
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
         </dependency>
-    </dependencies>
 
+
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>microservice-demo-provider-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <plugins>
@@ -51,12 +71,21 @@
                         </goals>
                         <configuration>
                             <classifier>spring-boot</classifier>
-                            <mainClass>DubboConsumer</mainClass>
+                            <mainClass>com.alibaba.edas.boot.DubboProvider</mainClass>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
 
 </project>
