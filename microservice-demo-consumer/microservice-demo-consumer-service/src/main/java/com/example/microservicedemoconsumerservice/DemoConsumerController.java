@@ -1,6 +1,8 @@
 package com.example.microservicedemoconsumerservice;
 
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +35,9 @@ public class DemoConsumerController {
     private EchoService demoService;
 
 
+
     @RequestMapping(value = "/ping", method = RequestMethod.GET)
+
     public Boolean ping() {
         try {
             String pong = demoService.echo("ping");

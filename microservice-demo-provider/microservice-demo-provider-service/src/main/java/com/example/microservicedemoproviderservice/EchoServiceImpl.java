@@ -1,6 +1,7 @@
 package com.example.microservicedemoproviderservice;
 
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.apache.dubbo.config.annotation.Service;
 import com.example.microservicedemoproviderapi.EchoService;
 

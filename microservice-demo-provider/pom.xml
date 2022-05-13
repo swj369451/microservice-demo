@@ -17,8 +17,12 @@
         <groupId>com.example</groupId>
         <artifactId>microservice-demo</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+
     </parent>
 
+    <properties>
+        <relative>1.0</relative>
+    </properties>
 
     <build>
         <plugins>
