@@ -15,25 +15,16 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>microservice-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-
+        <artifactId>microservice-demo-dependencies</artifactId>
+        <version>1.0</version>
+        <relativePath>../microservice-demo-dependencies/pom.xml</relativePath>
     </parent>
 
-    <properties>
-        <relative>1.0</relative>
-    </properties>
+
 
     <build>
         <plugins>
             <plugin>
-<!--
-        打包jar和war包的例子是在Maven的package命令生命周期内构建的。
-        包括所有的scope为provided的依赖。如果某些依赖需要被排除掉，可以使用exclude选项。
-        重新打包之后，默认情况下原始的(没有配置exectuable)构件(artifact)被重命名为.original，
-        并且使用自定义的分级可以保持原始构件。
-        打jar包时如果不配置该插件，打出来的jar包没有清单文件
--->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
@@ -41,22 +32,12 @@
                         <goals>
                             <goal>repackage</goal>
                         </goals>
-                        <configuration>
-                            <classifier>spring-boot</classifier>
-                            <mainClass>com.alibaba.edas.boot.DubboProvider</mainClass>
-                        </configuration>
+
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
+
 
 </project>
