@@ -8,14 +8,14 @@
 
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>microservice-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <artifactId>microservice-demo-dependencies</artifactId>
+        <version>1.0</version>
+        <relativePath>../microservice-demo-dependencies/pom.xml</relativePath>
     </parent>
 
     <packaging>pom</packaging>
 
     <modules>
-        <module>microservice-demo-consumer-api</module>
         <module>microservice-demo-consumer-service</module>
     </modules>
 
@@ -40,23 +40,19 @@
 
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>spring-boot</classifier>
-                            <mainClass>DubboConsumer</mainClass>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 
 </project>
