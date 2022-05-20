@@ -1,0 +1,35 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: nacos-dubbo-user-consumer
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.209.136:8848
+        enabled: false
+
+    sentinel:
+      web-context-unify: false # 关闭 context 整合
+      filter:
+        enabled: false
+      transport:
+        port: 8719
+        dashboard: 192.168.209.136:8858
+
+dubbo:
+  registry:
+    address: nacos://192.168.209.136:8848
+
+service:
+  version: 1.0.0
+
+feign:
+  sentinel:
+    enabled: true # 激活Sentinel对Feign的支持
+
+
+dev:
+  username: admin
+  password: jk123

@@ -1,0 +1,33 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: nacos-duboo-service
+  cloud:
+    sentinel:
+      web-context-unify: false # 关闭 context 整合
+      filter:
+        enabled: false
+      transport:
+        port: 8719
+        dashboard: 192.168.209.137:8858
+
+dubbo:
+  # 扫描包地址
+  scan:
+    base-packages: com.example.dubboprovider
+  # 协议
+  protocol:
+    name: dubbo
+    port: -1
+  # 注册地址
+  registry:
+    address: nacos://192.168.209.137:8848
+
+
+  # 版本号
+service:
+  version: 1.0.0
+
+
