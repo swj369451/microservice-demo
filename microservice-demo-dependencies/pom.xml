@@ -5,8 +5,7 @@
     <groupId>com.example</groupId>
     <artifactId>microservice-demo-dependencies</artifactId>
     <version>1.0</version>
-    <name>microservice-demo-dependencies</name>
-    <description>microservice-demo-dependencies</description>
+
 
     <parent>
         <groupId>com.example</groupId>
@@ -20,14 +19,16 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring.boot.version>2.2.9.RELEASE</spring.boot.version>
-        <spring.cloud.version>Hoxton.SR1</spring.cloud.version>
-        <spring.cloud.alibaba.version>2.2.0.RELEASE</spring.cloud.alibaba.version>
-        <dubbo.version>2.7.6</dubbo.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
+        <spring-boot.version>2.2.3.RELEASE</spring-boot.version>
+        <dubbo.version>2.7.8</dubbo.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <lombok.version>1.18.22</lombok.version>
-        <dubbo-registry-nacos.version>2.7.6</dubbo-registry-nacos.version>
+        <dubbo-registry-nacos.version>2.7.8</dubbo-registry-nacos.version>
+        <spring-boot-maven-plugin.version>2.3.12.RELEASE</spring-boot-maven-plugin.version>
+        <spring-context-support.version>1.0.11</spring-context-support.version>
     </properties>
 
     <dependencyManagement>
@@ -36,34 +37,20 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring.cloud.version}</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
-            <!-- Spring cloud Alibaba-->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba</artifactId>
-                <version>${spring.cloud.alibaba.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
 
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring.cloud.alibaba.version}</version>
+                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
-            <!-- Spring boot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-                <version>${spring.boot.version}</version>
-            </dependency>
 
             <!-- Dubbo -->
             <dependency>
@@ -88,12 +75,12 @@
                 <version>${lombok.version}</version>
             </dependency>
 
-
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-registry-nacos</artifactId>
                 <version>${dubbo-registry-nacos.version}</version>
             </dependency>
+
 
         </dependencies>
     </dependencyManagement>
@@ -105,7 +92,7 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring.boot.version}</version>
+                    <version>${spring-boot-maven-plugin.version}</version>
                     <executions>
                         <execution>
                             <goals>
@@ -118,21 +105,8 @@
         </pluginManagement>
     </build>
 
-    <!--    阿里镜像-->
-    <!--    <repositories>-->
-    <!--        <repository>-->
-    <!--            <id>maven-ali</id>-->
-    <!--            <url>http://maven.aliyun.com/nexus/content/groups/public//</url>-->
-    <!--            <releases>-->
-    <!--                <enabled>true</enabled>-->
-    <!--            </releases>-->
-    <!--            <snapshots>-->
-    <!--                <enabled>true</enabled>-->
-    <!--                <updatePolicy>always</updatePolicy>-->
-    <!--                <checksumPolicy>fail</checksumPolicy>-->
-    <!--            </snapshots>-->
-    <!--        </repository>-->
-    <!--    </repositories>-->
+
+
 
 
 </project>
