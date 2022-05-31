@@ -11,7 +11,7 @@ spring:
         enabled: false
       transport:
         port: 8719
-        dashboard: 192.168.209.145:8858
+        dashboard: 192.168.209.146:8858
 
 dubbo:
   # 扫描包地址
@@ -23,7 +23,7 @@ dubbo:
     port: -1
   # 注册地址
   registry:
-    address: nacos://192.168.209.145:8848
+    address: nacos://192.168.209.146:8848
 
 
   # 版本号
