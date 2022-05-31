@@ -19,6 +19,7 @@
         <module>microservice-demo-consumer</module>
         <module>microservice-demo-provider</module>
         <module>microservice-demo-dependencies</module>
+        <module>microservice-demo-gateway</module>
     </modules>
 
 </project>

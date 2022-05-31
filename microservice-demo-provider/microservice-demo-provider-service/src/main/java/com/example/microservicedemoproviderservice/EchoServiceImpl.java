@@ -22,7 +22,7 @@ import com.example.microservicedemoproviderapi.EchoService;
  * 12.monitor：监控中心配置
  * 13.registry：注册中心配置
  */
-@Service(version = "1.0.0", group = "DUBBO")
+@Service(version = "1.0.0")
 public class EchoServiceImpl implements EchoService {
 
     public String echo(String name) {
