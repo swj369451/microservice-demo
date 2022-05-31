@@ -1,0 +1,19 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.209.146:8848
+    gateway:
+      routes:
+        - id: resources
+          uri: lib://products-service
+          predicates:
+            - Path=/resources/**
+          filters:
+            - StripPrefix=1
+            - Time=false

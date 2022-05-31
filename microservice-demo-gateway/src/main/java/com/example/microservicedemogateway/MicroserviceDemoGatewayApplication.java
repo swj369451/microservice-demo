@@ -1,11 +1,13 @@
-package com.example.microservicedemoconsumerservice;
+package com.example.microservicedemogateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DubboConsumer {
+public class MicroserviceDemoGatewayApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(DubboConsumer.class, args);
+        SpringApplication.run(MicroserviceDemoGatewayApplication.class, args);
     }
+
 }
